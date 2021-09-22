@@ -4,37 +4,42 @@ JOIN wizard ON wizard.id = player.wizard_id
 JOIN team ON team.id = player.team_id
 ORDER BY équipe
 
+-------
 SELECT lastname as noms, firstname as prénoms, role, name as équipe
 from player
 JOIN wizard ON wizard.id = player.wizard_id
 JOIN team ON team.id = player.team_id
 ORDER BY role
 
+------
 SELECT lastname as noms, firstname as prénoms, role, name as équipe
 from player
 JOIN wizard ON wizard.id = player.wizard_id
 JOIN team ON team.id = player.team_id
 ORDER BY noms
 
-
+------
 SELECT lastname as noms, firstname as prénoms, role, name as équipe
 from player
 JOIN wizard ON wizard.id = player.wizard_id
 JOIN team ON team.id = player.team_id
 ORDER BY prénoms
 
+------
 SELECT lastname as noms, firstname as prénoms, role as rôle
 from player
 JOIN wizard ON wizard.id = player.wizard_id
 WHERE role = 'seeker'
 ORDER BY noms
 
+------
 SELECT lastname as noms, firstname as prénoms, role as rôle
 from player
 JOIN wizard ON wizard.id = player.wizard_id
 WHERE role = 'seeker'
 ORDER BY prénoms
 
+------
 SELECT firstname AS prénom, lastname AS nom, w.id
 FROM wizard AS w
 LEFT JOIN player AS p ON w.id = p.wizard_id
