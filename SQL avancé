@@ -1,0 +1,22 @@
+SELECT t.name AS équipe, COUNT(p.id) AS nb_joueurs
+FROM team AS t
+JOIN player AS p ON t.id = p.team_id
+GROUP BY équipe
+ORDER BY nb_joueurs DESC
+
+-----
+
+SELECT t.name AS équipe, COUNT(p.id) AS nb_joueurs
+FROM team AS t
+JOIN player AS p ON t.id = p.team_id
+GROUP BY équipe
+HAVING nb_joueurs > 14
+
+
+
+-----
+
+SELECT name, p.id, enrollment_date, dayname(enrollment_date)
+FROM player AS p
+JOIN team ON team.id = p.team_id
+WHERE team.name = 'Gryffindor' AND DAYNAME(enrollment_date) = 'Monday'
